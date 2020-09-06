@@ -1,0 +1,10 @@
+# .cache/
+*.cache
+*.prof
+*.akd
+*.validationcache
+# игнорировать все файлы в каталоге coursework_WwiseProject/
+coursework_WwiseProject/
+*.wem
+*.bnk
+*.wav
