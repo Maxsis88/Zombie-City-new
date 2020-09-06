@@ -19,9 +19,7 @@ public class characterMuover : MonoBehaviour
     float jumpPower = 10;
     Vector3 moveVector;
    
-  
-
-
+   
     // Start is called before the first frame update
     void Start()
     {
