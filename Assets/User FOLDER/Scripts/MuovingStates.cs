@@ -82,14 +82,18 @@ public class MuovingStates : MonoBehaviour
         if (health > 0)
         {
             // проверка необходимого состояния персонажа
-            if (Vector3.Distance(transform.position, player.transform.position) < 10 && (!Physics.Linecast(player.transform.position, transform.position)))
+            Debug.DrawRay(transform.position + Vector3.up , (player.transform.position - transform.position) );
+            if (Vector3.Distance(transform.position, player.transform.position) < 10 && (!Physics.Linecast(transform.position += Vector3.up, (player.transform.position - transform.position) + Vector3.up )))
             {
                 state = PlayerState.hunt;
+                Debug.Log("Hunt");
             }
 
-            if (Vector3.Distance(transform.position, player.transform.position) >= 10)
+            //
+            else if (Vector3.Distance(transform.position, player.transform.position) >= 10)
             {
                 state = PlayerState.chill;
+                Debug.Log("Chill");
             }
 
             // присвоение состояния персонажу
@@ -101,6 +105,7 @@ public class MuovingStates : MonoBehaviour
                 case PlayerState.hunt:
                     Hunt();
                     break;
+                    //(здесь должно быть состояние смерти ещё)
             }
 
 
@@ -132,8 +137,6 @@ public class MuovingStates : MonoBehaviour
                 while (animat != AnimationState.Death);
             }
         }
-
-        //Debug.Log(animat);
     }
 
     private void OnDrawGizmos()
@@ -171,19 +174,21 @@ public class MuovingStates : MonoBehaviour
     void Hunt()
     {
         // если игрок подошел к персонажу меньше чем на 10 метров и между ними нет стены, игрок становиться целью персонажа
-        if (Vector3.Distance(player.transform.position, transform.position) <= 10 && Vector3.Distance(player.transform.position, transform.position) >= 1.2 &&(!Physics.Linecast(player.transform.position, transform.position)))    //Vector3.Distance(player.position, transform.position) <= 15  && (!Physics.Linecast(player.position, transform.position)
+        if (Vector3.Distance(player.transform.position, transform.position) >= 1.5 )   //Vector3.Distance(player.position, transform.position) <= 15  && (!Physics.Linecast(player.position, transform.position)
         {
             targetPosition = player.transform.position;
             agent.SetDestination(targetPosition);
             animat = AnimationState.Run;
         }
         // если игрок подошел к персонажу менее одного метра, начать его атаку
-        else if ( Vector3.Distance(player.transform.position, transform.position) < 1.2 && (!Physics.Linecast(player.transform.position, transform.position)))
+        //  && (!Physics.Linecast(player.transform.position, transform.position)))
+        else if ( Vector3.Distance(player.transform.position, transform.position) < 1.5)
         {
             //agent.isStopped = true;
             animat = AnimationState.Attack;
             targetPosition = player.transform.position;
-            agent.SetDestination(targetPosition);
+            //agent.SetDestination(targetPosition);             //(не хватает вращения в сторону игрока) 
+                                                                // в состоянии хант какой то exeption, перс крутиться пока не переходит в состояние чилл
             
         }
     }
@@ -199,7 +204,7 @@ public class MuovingStates : MonoBehaviour
             agent.CalculatePath(targetPosition, path);
         }
         while (path.status != NavMeshPathStatus.PathComplete);
-        agent.SetDestination(targetPosition);
+        agent.SetDestination(targetPosition);                          // есть подозрение что он вращается из за этого куска (каждый раз обновляя место назначения)
     }
 
     public void OnTakeDamage(int damage)
