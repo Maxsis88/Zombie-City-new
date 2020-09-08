@@ -19,6 +19,7 @@ public class MuovingStates : MonoBehaviour
     
     PlayerState state;
     AnimationState animat;
+    LayerMask zombieLayerMask = 8;
 
     public AK.Wwise.Event roarEvent;
 
@@ -81,16 +82,41 @@ public class MuovingStates : MonoBehaviour
 
         if (health > 0)
         {
+            var dis = Vector3.Distance(transform.position, player.transform.position);
             // проверка необходимого состояния персонажа
-            Debug.DrawRay(transform.position + Vector3.up , (player.transform.position - transform.position) );
-            if (Vector3.Distance(transform.position, player.transform.position) < 10 && (!Physics.Linecast(transform.position += Vector3.up, (player.transform.position - transform.position) + Vector3.up )))
+            Debug.DrawRay(transform.position + Vector3.up , (player.transform.position - transform.position));
+
+
+
+
+            // написать вместо ифов свитч кейс
+            // switch (state)
+            // {
+            //     case (dis < 10 && (!Physics.Linecast(transform.position += Vector3.up, (player.transform.position - transform.position) + Vector3.up):
+                
+
+
+            // }
+
+
+
+
+
+
+
+
+
+            if (dis < 10 )
             {
+            if (!Physics.Linecast(transform.position += Vector3.up, (player.transform.position - transform.position) + Vector3.up, zombieLayerMask ))
+                {
                 state = PlayerState.hunt;
                 Debug.Log("Hunt");
+                }
             }
 
             //
-            else if (Vector3.Distance(transform.position, player.transform.position) >= 10)
+            else if (dis >= 10)
             {
                 state = PlayerState.chill;
                 Debug.Log("Chill");
