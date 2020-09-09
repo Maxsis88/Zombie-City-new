@@ -63,6 +63,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Scenes\3rdPersonWithAimMode\ActivateOnKeypress.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerLookAt.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerMovement.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Scenes\Anywhere Door\TagChanger.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetProperty.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetTargetController.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Scenes\DualTarget\MoveAimTarget.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Scenes\DualTarget\PointAtAimTarget.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Scenes\Scripting\ScriptingExample.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Scenes\Trigger volumes\GenericTrigger.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovement.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovement2D.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovementNoCamera.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Shared\Scripts\ActivateCameraWithDistance.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Shared\Scripts\ActivateCamOnPlay.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Shared\Scripts\ExampleHelpWindow.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Shared\Scripts\InvokeEventFromInspector.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Shared\Scripts\MixingCameraBlend.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Shared\Scripts\PlayerMove.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Shared\Scripts\PlayerMoveOnSphere.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Shared\Scripts\PlayerMovePhysics.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Shared\Scripts\SpawnInCircle.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.2\Scrub Bubble support for Nested Timelines (experimental)\CinemachineTimelineEditorExtensions\CinemachineTimelineEditorExtensions.cs" />
     <Compile Include="Assets\User FOLDER\Scripts\characterMuover.cs" />
     <Compile Include="Assets\User FOLDER\Scripts\CharacterScripts\Mover.cs" />
     <Compile Include="Assets\User FOLDER\Scripts\CharacterScripts\new_footstep_script.cs" />
@@ -285,14 +308,12 @@
     <Compile Include="Assets\ZombieAttack.cs" />
     <Compile Include="Assets\ZombiePunch.cs" />
     <None Include="Assets\PolygonApocalypse\Materials\Misc\Shader\POLYGON_Zombies.shader" />
+    <None Include="Assets\Samples\Cinemachine\2.6.2\Cinemachine Example Scenes\Scenes\Anywhere Door\ScreenCutoutShader.shader" />
     <None Include="Assets\PolygonApocalypse\Materials\Misc\Shader\POLYGON_Triplanar.shader" />
     <None Include="Assets\Wwise\Version.txt" />
     <None Include="Assets\WwiseSettings.xml" />
     <None Include="Assets\PolygonApocalypse\Materials\Misc\Shader\SkyGradient.shader" />
     <None Include="Assets\StreamingAssets\desc.txt" />
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/kursowaya/Coursework project/coursework/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Cinemachine">
       <HintPath>D:/kursowaya/Coursework project/coursework/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
@@ -856,6 +877,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.Timeline.Editor.csproj">
+      <Project>{1DA527D1-3A3D-2AFF-8E35-F10D8ED8A33F}</Project>
+      <Name>Unity.Timeline.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="NavMeshComponentsEditor.csproj">
       <Project>{8999BCA0-0355-921B-2B7E-8DEAE25A3E3C}</Project>
       <Name>NavMeshComponentsEditor</Name>

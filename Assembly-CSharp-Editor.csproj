@@ -119,9 +119,6 @@
     <Reference Include="UnityEngine.TestRunner">
       <HintPath>D:/kursowaya/Coursework project/coursework/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/kursowaya/Coursework project/coursework/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Cinemachine">
       <HintPath>D:/kursowaya/Coursework project/coursework/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
@@ -703,6 +700,10 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{A9764636-1F74-139E-3882-51B092585AC9}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.Editor.csproj">
+      <Project>{1DA527D1-3A3D-2AFF-8E35-F10D8ED8A33F}</Project>
+      <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="NavMeshComponentsEditor.csproj">
       <Project>{8999BCA0-0355-921B-2B7E-8DEAE25A3E3C}</Project>
