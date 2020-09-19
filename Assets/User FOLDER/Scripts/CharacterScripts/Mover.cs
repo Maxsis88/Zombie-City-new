@@ -25,6 +25,7 @@ public class Mover : MonoBehaviour
     public bool isGrounded;
     public GameObject aim;
     public GameObject healthbar;
+    public GameObject cameraTarget;
     public float health = 100;
     bool isAlive;
     // Start is called before the first frame update
@@ -85,6 +86,12 @@ public class Mover : MonoBehaviour
         {
             transform.Rotate(transform.up * Input.GetAxis("Mouse X") * speedRotation * Time.deltaTime);
         }
+        
+        // if (Input.GetAxis("Mouse Y") != 0)
+        // {
+        //     cameraTarget.transform.rotation = Quaternion.Euler(transform.right * Input.GetAxis("Mouse Y") * speedRotation * Time.deltaTime);
+        // }
+
 
         //проверка режима передвижения персонажа
         if (Input.GetKey(KeyCode.LeftAlt))

@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\User FOLDER\Scripts\CharacterScripts\CameraY.cs" />
      <Compile Include="Assets\User FOLDER\Scripts\CharacterScripts\Mover.cs" />
      <Compile Include="Assets\User FOLDER\Scripts\CharacterScripts\WeaponHandler.cs" />
      <Compile Include="Assets\User FOLDER\Scripts\CharacterScripts\new_footstep_script.cs" />

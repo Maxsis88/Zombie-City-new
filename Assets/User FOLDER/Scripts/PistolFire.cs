@@ -24,14 +24,17 @@ public class PistolFire : MonoBehaviour
         {
             animationChangeTime = 1f;
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 20f))
+            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
+            if (Physics.Raycast(ray.origin, ray.direction, out hit, 20f))
             {
                 if (hit.collider.CompareTag("Enemy"))
                 {
                     hit.transform.SendMessage("OnTakeDamage");
                 }
             }
+            Debug.DrawRay(ray.origin, ray.direction, Color.red, 20f);
         }
+        
     }
 
     private void Update()

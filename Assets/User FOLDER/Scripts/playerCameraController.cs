@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerCameraController : MonoBehaviour
 {
-    public Camera camera;
+    public GameObject cam;
     public Transform target;
     float speedX = 200;
     float speedY = 100;

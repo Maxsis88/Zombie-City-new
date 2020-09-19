@@ -111,7 +111,7 @@ public class MuovingStates : MonoBehaviour
             if (!Physics.Linecast(transform.position += Vector3.up, (player.transform.position - transform.position) + Vector3.up, zombieLayerMask ))
                 {
                 state = PlayerState.hunt;
-                Debug.Log("Hunt");
+                //Debug.Log("Hunt");
                 }
             }
 
@@ -119,7 +119,7 @@ public class MuovingStates : MonoBehaviour
             else if (dis >= 10)
             {
                 state = PlayerState.chill;
-                Debug.Log("Chill");
+                //Debug.Log("Chill");
             }
 
             // присвоение состояния персонажу
